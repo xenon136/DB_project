@@ -14,7 +14,7 @@
  $STH = $DBH->prepare("INSERT INTO color (name) VALUES (:name)"); 
  $STH->bindParam(':name', $name);
  $STH->execute();
- $url = "https://db-project-six.vercel.app/api/add_category.php"
+ $url = "https://db-project-six.vercel.app/api/add_color.php";
  header('Location: '.$url);
    ?>
    </body>

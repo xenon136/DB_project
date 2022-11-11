@@ -15,7 +15,7 @@
  $STH = $DBH->prepare("INSERT INTO caregory (name) VALUES (:name)"); 
  $STH->bindParam(':name', $category);
  $STH->execute();
- $url = "https://db-project-six.vercel.app/api/add_category.php"
+ $url = "https://db-project-six.vercel.app/api/add_category.php";
  header('Location: '.$url);
    ?>
    </body>
