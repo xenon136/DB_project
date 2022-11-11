@@ -144,10 +144,10 @@ body {
             echo "<tr><td>".$row['country_name'] . "</td></tr>";  
           }*/
 
-          $res = "undefinded"
+          $res = "undefinded"/*
           if (isset($_POST['name'])) {
             $res = $_POST['name']
-          }
+          }*/
           echo "<tr><td>".$res."</td></tr>";  
           ?>
       </table>
