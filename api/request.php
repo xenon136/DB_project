@@ -12,7 +12,7 @@
  $user='wulgcjle';
  $password='tYwgRYgZoK9N3hdNkyU604UrbpEZ2OIl';
  $db_name='wulgcjle';
- $con = pg_connect("host=$host dbname=$db user=$user password=$pass")
+ $con = pg_connect("host=$host dbname=$db_name user=$user password=$password")
    or die ("Could not connect to server\n");
 
  $query = 'SELECT * FROM country';
