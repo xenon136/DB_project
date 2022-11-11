@@ -142,13 +142,13 @@ body {
           $STH->setFetchMode(PDO::FETCH_ASSOC);  
           while($row = $STH->fetch()) {  
             echo "<tr><td>".$row['country_name'] . "</td></tr>";  
-          }*/
+          }
 
           $res = "undefinded"
           if (isset($_POST['name'])) {
             $res = $_POST['name']
           }
-          echo "<tr><td>".$res. "</td></tr>";  
+          echo "<tr><td>".$res."</td></tr>";  */
           ?>
       </table>
     </main>
