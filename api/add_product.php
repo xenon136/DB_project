@@ -116,7 +116,7 @@ body {
     </header>
     <aside class="left">
       <ul>
-        <li><a href="add_product.php">Добавить товар</a></li>
+        <li><a href="index.php">Просмотр</a></li>
         <li><a href="add_color.php">Добавить цвет</a></li>
         <li><a href="add_company.php">Добавить компанию</a></li>
         <li><a href="add_category.php">Добавить категорию</a></li>
@@ -145,8 +145,8 @@ body {
           }*/
 
           $res = "undefinded"
-          if (isset($_GET['name'])) {
-            $res = $_GET['name']
+          if (isset($_POST['name'])) {
+            $res = $_POST['name']
           }
           echo "<tr><td>".$res."</td></tr>";  
           ?>
