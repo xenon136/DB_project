@@ -19,7 +19,7 @@
  $query = 'SELECT * FROM country';
  $results = pg_query($con, $query) or die('Query failed: ' . pg_last_error());
 
- echo results
+ echo $results
 
  /*for($data=[];$row=pg_fetch_row($results);$data[]=$row) ;
     $result='';
