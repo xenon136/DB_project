@@ -126,7 +126,7 @@ body {
       <h2>Добавление категорий</h2>
       <p>На этой странице вы можете добавить категорию</p>
       <hr>
-      <form  action="add_product.php" method="post">
+      <form  action="add_product.php" method="get">
       <p>Категория: <input type="text" name="name" /></p>
         <input type="submit" value="Отправить" /><br>
       </form>
