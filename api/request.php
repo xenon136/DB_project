@@ -6,6 +6,7 @@
         <th>name</th>
 
     </tr>
+  </table>
 
    <?php 
  $host='lucky.db.elephantsql.com';
@@ -18,19 +19,22 @@
  $query = 'SELECT * FROM country';
  $results = pg_query($con, $query) or die('Query failed: ' . pg_last_error());
 
- for($data=[];$row=pg_fetch_row($results);$data[]=$row) ;
-    $results='';
+ echo results
+
+ /*for($data=[];$row=pg_fetch_row($results);$data[]=$row) ;
+    $result='';
     foreach($data as $elem) {
-        $results.='<tr>';
+        $result.='<tr>';
 
-        $results.='<td>'.$elem['id'].'</td>';
-        $results.='<td>'.$elem['name'].'</td>';
+        $result.='<td>'.$elem['id'].'</td>';
+        $result.='<td>'.$elem['name'].'</td>';
 
 
-        $results.='</tr>';
+        $result.='</tr>';
     }
-    echo $results;
+    echo $result;*/
 
 
    ?>
-</table>
+
+</html>
