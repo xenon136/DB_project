@@ -143,7 +143,7 @@ body {
           while($row = $STH->fetch()) {  
             echo "<tr><td>".$row['country_name'] . "</td></tr>";  
           }*/
-          $res = $_POST["category"]
+          $res = $_POST['cat']
           echo "<tr><td>".$res. "</td></tr>";  
           ?>
       </table>
