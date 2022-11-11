@@ -1,11 +1,5 @@
 <html>
 
-  <table>
-    <tr>
-        <th>id</th>
-        <th>name</th>
-
-    </tr>
 
    <?php 
  $host='lucky.db.elephantsql.com';
@@ -23,5 +17,4 @@
 
 
    ?>
-</table>
 </html>
