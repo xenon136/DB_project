@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+
+    </head>
+    <body>
 <?php 
  $host='lucky.db.elephantsql.com';
  $user='wulgcjle';
@@ -14,4 +18,5 @@
  $url = "https://db-project-six.vercel.app/api/add_category.php"
  header('Location: '.$url);
    ?>
+   </body>
 </html>
