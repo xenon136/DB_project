@@ -161,6 +161,22 @@ body {
           }
           ?>
       </table>
+      <hr><br>
+      <h2>Категория</h2>
+      <table>
+        <tr>
+          <th>Название</th>
+        </tr>
+        <?php 
+          $DBH = new PDO("pgsql:host=$host;dbname=$db_name;user=$user;password=$password");
+          $query = 'SELECT * FROM category';
+          $STH = $DBH->query($query);
+          $STH->setFetchMode(PDO::FETCH_ASSOC);  
+          while($row = $STH->fetch()) {  
+            echo "<tr><td>".$row['name'] . "</td></tr>";  
+          }
+          ?>
+      </table>
     </main>
     <footer class="footer">&copy; Copyright Kondratev D.S.</footer>
   </div>

@@ -127,10 +127,11 @@ body {
       <p>На этой странице вы можете добавить категорию</p>
       <hr>
       <form  action="add_category_act.php" method="POST">
-        <label>Цвет: <input type="text" name="category"></label><br>
+        <label>Категория: <input type="text" name="category"></label><br>
         <input type="submit" value="Отправить" /><br>
       </form>
     </main>
+    <br><br><br><br><br><br><br><br><br><br>
     <footer class="footer">&copy; Copyright Kondratev D.S.</footer>
   </div>
 </body>
