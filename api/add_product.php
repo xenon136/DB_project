@@ -143,7 +143,11 @@ body {
           while($row = $STH->fetch()) {  
             echo "<tr><td>".$row['country_name'] . "</td></tr>";  
           }*/
-          $res = $_POST['cat']
+
+          $res = "undefinded"
+          if (isset($_POST['name'])) {
+            $res = $_POST['name']
+          }
           echo "<tr><td>".$res. "</td></tr>";  
           ?>
       </table>
