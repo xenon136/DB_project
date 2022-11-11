@@ -116,42 +116,22 @@ body {
     </header>
     <aside class="left">
       <ul>
-        <li><a href="index.php">Просмотр</a></li>
+        <li><a href="add_category.php">Добавить категорию</a></li>
         <li><a href="add_color.php">Добавить цвет</a></li>
         <li><a href="add_company.php">Добавить компанию</a></li>
-        <li><a href="add_category.php">Добавить категорию</a></li>
+        <li><a href="index.php">Просмотр</a></li>
       </ul>
     </aside>
     <main class="content">
-      <h2>Таблицы значений</h2>
-      <p>На этой странице можно увидеть значения из базы данных</p>
-      <hr><br>
-      <h2>Страны</h2>
-      <table>
-        <tr>
-          <th>Название</th>
-        </tr>
-        <?php 
-          /*$host='lucky.db.elephantsql.com';
-          $user='wulgcjle';
-          $password='tYwgRYgZoK9N3hdNkyU604UrbpEZ2OIl';
-          $db_name='wulgcjle';
-          $DBH = new PDO("pgsql:host=$host;dbname=$db_name;user=$user;password=$password");
-          $query = 'SELECT * FROM country';
-          $STH = $DBH->query($query);
-          $STH->setFetchMode(PDO::FETCH_ASSOC);  
-          while($row = $STH->fetch()) {  
-            echo "<tr><td>".$row['country_name'] . "</td></tr>";  
-          }*/
-
-          $res = "undefinded";
-          if (isset($_POST['name'])) {
-            $res = $_POST['name'];
-          }
-          echo "<tr><td>".$res."</td></tr>";  
-          ?>
-      </table>
+      <h2>Добавление категорий</h2>
+      <p>На этой странице вы можете добавить категорию</p>
+      <hr>
+      <form name="prod_form" action="add_product_act.php" method="post">
+      <p>Категория: <input type="text" name="name" /></p>
+        <input name="input" type="submit" value="Отправить" /><br>
+      </form>
     </main>
+    <br><br><br><br><br><br><br><br><br><br>
     <footer class="footer">&copy; Copyright Kondratev D.S.</footer>
   </div>
 </body>

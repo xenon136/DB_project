@@ -9,11 +9,10 @@
  $user='wulgcjle';
  $password='tYwgRYgZoK9N3hdNkyU604UrbpEZ2OIl';
  $db_name='wulgcjle';
- $category = $_POST["name"];
- echo $category;
+ $name = $_POST["name"];
  $DBH = new PDO("pgsql:host=$host;dbname=$db_name;user=$user;password=$password");
- $STH = $DBH->prepare("INSERT INTO caregory (name) VALUES (:name)"); 
- $STH->bindParam(':name', $category);
+ $STH = $DBH->prepare("INSERT INTO color (name) VALUES (:name)"); 
+ $STH->bindParam(':name', $name);
  $STH->execute();
  $url = "https://db-project-six.vercel.app/api/add_category.php"
  header('Location: '.$url);
