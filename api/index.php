@@ -169,7 +169,7 @@ body {
         </tr>
         <?php 
           $DBH = new PDO("pgsql:host=$host;dbname=$db_name;user=$user;password=$password");
-          $query = 'SELECT * FROM category';
+          $query = 'SELECT * FROM caregory';
           $STH = $DBH->query($query);
           $STH->setFetchMode(PDO::FETCH_ASSOC);  
           while($row = $STH->fetch()) {  
