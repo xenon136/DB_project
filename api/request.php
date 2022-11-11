@@ -15,7 +15,7 @@
  $con = pg_connect("host=$host dbname=$db_name user=$user password=$password")
    or die ("Could not connect to server\n");
 
- $query = 'SELECT * FROM country';
+ $query = 'SELECT * FROM public.country';
  $results = pg_query($con, $query) or die('Query failed: ' . pg_last_error());
 
  for($data=[];$row=pg_fetch_row($results);$data[]=$row) ;
@@ -30,6 +30,7 @@
         $result.='</tr>';
     }
     echo $result;
+  pg_close($con);
 
 
    ?>
