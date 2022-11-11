@@ -21,15 +21,15 @@
  for($data=[];$row=pg_fetch_row($results);$data[]=$row) ;
     $results='';
     foreach($data as $elem) {
-        $result.='<tr>';
+        $results.='<tr>';
 
-        $result.='<td>'.$elem['id'].'</td>';
-        $result.='<td>'.$elem['name'].'</td>';
+        $results.='<td>'.$elem['id'].'</td>';
+        $results.='<td>'.$elem['name'].'</td>';
 
 
-        $result.='</tr>';
+        $results.='</tr>';
     }
-    echo $result;
+    echo $results;
 
 
    ?>
