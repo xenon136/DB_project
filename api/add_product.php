@@ -129,7 +129,47 @@ body {
       <p>На этой странице вы можете добавить товар</p>
       <hr>
       <form name="prod_form" action="act/add_product_act.php" method="post">
-      <p>Категория: <input type="text" name="name" /></p>
+      <p>Название: <input type="text" name="name" /></p>
+      <?php 
+          $host='lucky.db.elephantsql.com';
+          $user='wulgcjle';
+          $password='tYwgRYgZoK9N3hdNkyU604UrbpEZ2OIl';
+          $db_name='wulgcjle';
+          $DBH = new PDO("pgsql:host=$host;dbname=$db_name;user=$user;password=$password");
+          $query = 'SELECT * FROM seller';
+          $STH = $DBH->query($query);
+          $STH->setFetchMode(PDO::FETCH_ASSOC);  
+          echo "<p>Продавец: <select name='seller[]'>";
+          while($row = $STH->fetch()) {  
+            echo "<option value=".$row["id"].">".$row["name"]."</option>";
+          }
+          echo "</select></p>";
+          $query = 'SELECT * FROM company';
+          $STH = $DBH->query($query);
+          $STH->setFetchMode(PDO::FETCH_ASSOC);  
+          echo "<p>Производитель: <select name='company[]'>";
+          while($row = $STH->fetch()) {  
+            echo "<option value=".$row["id"].">".$row["name"]."</option>";
+          }
+          echo "</select></p>";
+          $query = 'SELECT * FROM color';
+          $STH = $DBH->query($query);
+          $STH->setFetchMode(PDO::FETCH_ASSOC);  
+          echo "<p>Цвет: <select name='color[]'>";
+          while($row = $STH->fetch()) {  
+            echo "<option value=".$row["id"].">".$row["name"]."</option>";
+          }
+          echo "</select></p>";
+          $query = 'SELECT * FROM caregory';
+          $STH = $DBH->query($query);
+          $STH->setFetchMode(PDO::FETCH_ASSOC);  
+          echo "<p>Категория: <select name='category[]'>";
+          while($row = $STH->fetch()) {  
+            echo "<option value=".$row["id"].">".$row["name"]."</option>";
+          }
+          echo "</select></p>";
+          ?>
+        <p>Цена: <input type="number" name="price" /></p>
         <input name="input" type="submit" value="Отправить" /><br>
       </form>
     </main>
