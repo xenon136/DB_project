@@ -145,7 +145,7 @@ body {
           $password='tYwgRYgZoK9N3hdNkyU604UrbpEZ2OIl';
           $db_name='wulgcjle';
           $DBH = new PDO("pgsql:host=$host;dbname=$db_name;user=$user;password=$password");
-          $query = 'SELECT product.name as name seller.name as seller_name FROM product, seller, color, company, caregory WHERE product.seller_id = seller.id and product.color_id = color.id and product.company_id = company.id and product.category_id = caregory.id';
+          $query = 'SELECT product.name as name, seller.name as seller_name  FROM product, seller, color, company, caregory WHERE product.seller_id = seller.id and product.color_id = color.id and product.company_id = company.id and product.category_id = caregory.id';
           $STH = $DBH->query($query);
           $STH->setFetchMode(PDO::FETCH_ASSOC);  
           while($row = $STH->fetch()) {  
