@@ -150,7 +150,7 @@ body {
           $STH->setFetchMode(PDO::FETCH_ASSOC);  
           while($row = $STH->fetch()) {  
             echo "<tr>";
-            echo "<td>".$row['product.name'] . "</td>";
+            echo "<td>".$row[product['name']] . "</td>";
             echo "<td>".$row['seller.name'] . "</td>";
             echo "<td>".$row['color.name'] . "</td>";
             echo "<td>".$row['company.name'] . "</td>";
