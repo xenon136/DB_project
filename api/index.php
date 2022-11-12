@@ -137,7 +137,6 @@ body {
           <th>Изготовитель</th>
           <th>Категория</th>
           <th>Цена</th>
-          <th>Удалить</th>
         </tr>
         <?php 
           $host='lucky.db.elephantsql.com';
@@ -145,7 +144,7 @@ body {
           $password='tYwgRYgZoK9N3hdNkyU604UrbpEZ2OIl';
           $db_name='wulgcjle';
           $DBH = new PDO("pgsql:host=$host;dbname=$db_name;user=$user;password=$password");
-          $query = 'SELECT product.name as name, seller.name as seller_name, colore.name as color_name, company.name as company_name, caregory.name as category_name, product.price as price, product.id as id  FROM product, seller, color, company, caregory WHERE product.seller_id = seller.id and product.color_id = color.id and product.company_id = company.id and product.category_id = caregory.id';
+          $query = 'SELECT product.name as name, seller.name as seller_name, color.name as color_name, company.name as company_name, caregory.name as category_name, product.price as price, product.id as id  FROM product, seller, color, company, caregory WHERE product.seller_id = seller.id and product.color_id = color.id and product.company_id = company.id and product.category_id = caregory.id';
           $STH = $DBH->query($query);
           $STH->setFetchMode(PDO::FETCH_ASSOC);  
           while($row = $STH->fetch()) {  
@@ -156,11 +155,26 @@ body {
             echo "<td>".$row['company_name'] . "</td>";
             echo "<td>".$row['category_name'] . "</td>";
             echo "<td>".$row['price'] . "</td>";
-            echo "<td><form action='delete_product_row.php' method='post'><input type='submit' name='id' value='Удалить'></form></td>";
             echo "</tr>";  
           }
           ?>
       </table>
+      <p>В этой форме вы можете удалить товар</p>
+      <hr>
+      <form name="prod_form" action="delete_product_row.php" method="post">
+      <?php 
+      $DBH = new PDO("pgsql:host=$host;dbname=$db_name;user=$user;password=$password");
+      $query = 'SELECT * FROM product';
+      $STH = $DBH->query($query);
+      $STH->setFetchMode(PDO::FETCH_ASSOC);  
+      echo "<p>Наименование: <select name='id'>";
+      while($row = $STH->fetch()) {  
+        echo "<option value=".$row["id"].">".$row["name"]."</option>";
+      }
+      echo "</select></p>";
+      ?>
+      <input name="input" type="submit" value="Удалить" /><br>
+      </form>
       <hr><br>
       <h2>Цвета</h2>
       <table>
