@@ -139,7 +139,7 @@ body {
           $query = 'SELECT * FROM seller';
           $STH = $DBH->query($query);
           $STH->setFetchMode(PDO::FETCH_ASSOC);  
-          echo "<p>Продавец: <select name='seller[]'>";
+          echo "<p>Продавец: <select name='seller'>";
           while($row = $STH->fetch()) {  
             echo "<option value=".$row["id"].">".$row["name"]."</option>";
           }
@@ -147,7 +147,7 @@ body {
           $query = 'SELECT * FROM company';
           $STH = $DBH->query($query);
           $STH->setFetchMode(PDO::FETCH_ASSOC);  
-          echo "<p>Производитель: <select name='company[]'>";
+          echo "<p>Производитель: <select name='company'>";
           while($row = $STH->fetch()) {  
             echo "<option value=".$row["id"].">".$row["name"]."</option>";
           }
@@ -155,7 +155,7 @@ body {
           $query = 'SELECT * FROM color';
           $STH = $DBH->query($query);
           $STH->setFetchMode(PDO::FETCH_ASSOC);  
-          echo "<p>Цвет: <select name='color[]'>";
+          echo "<p>Цвет: <select name='color'>";
           while($row = $STH->fetch()) {  
             echo "<option value=".$row["id"].">".$row["name"]."</option>";
           }
@@ -163,7 +163,7 @@ body {
           $query = 'SELECT * FROM caregory';
           $STH = $DBH->query($query);
           $STH->setFetchMode(PDO::FETCH_ASSOC);  
-          echo "<p>Категория: <select name='category[]'>";
+          echo "<p>Категория: <select name='category'>";
           while($row = $STH->fetch()) {  
             echo "<option value=".$row["id"].">".$row["name"]."</option>";
           }
