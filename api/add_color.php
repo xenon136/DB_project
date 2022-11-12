@@ -128,7 +128,7 @@ body {
       <h2>Добавление категорий</h2>
       <p>На этой странице вы можете добавить цвет</p>
       <hr>
-      <form name="col_form" action="act/add_color_act.php" method="post">
+      <form name="col_form" action="add_color_act.php" method="post">
       <p>Цвет: <input type="text" name="name" /></p>
         <input name="input" type="submit" value="Отправить" /><br>
       </form>

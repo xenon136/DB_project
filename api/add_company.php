@@ -128,7 +128,7 @@ body {
       <h2>Добавление производителя</h2>
       <p>На этой странице вы можете добавить производителя</p>
       <hr>
-      <form name="comp_form" action="act/add_company_act.php" method="post">
+      <form name="comp_form" action="add_company_act.php" method="post">
       <p>Производитель: <input type="text" name="name" /></p>
         <input name="input" type="submit" value="Отправить" /><br>
       </form>

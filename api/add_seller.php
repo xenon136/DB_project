@@ -128,7 +128,7 @@ body {
     <h2>Добавление продавца</h2>
       <p>На этой странице вы можете добавить продавца</p>
       <hr>
-      <form name="sell_form" action="act/add_seller_act.php" method="post">
+      <form name="sell_form" action="add_seller_act.php" method="post">
       <p>Продавец: <input type="text" name="name" /></p>
         <input name="input" type="submit" value="Отправить" /><br>
       </form>

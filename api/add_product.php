@@ -128,7 +128,7 @@ body {
       <h2>Добавление товар</h2>
       <p>На этой странице вы можете добавить товар</p>
       <hr>
-      <form name="prod_form" action="act/add_product_act.php" method="post">
+      <form name="prod_form" action="add_product_act.php" method="post">
       <p>Название: <input type="text" name="name" /></p>
       <?php 
           $host='lucky.db.elephantsql.com';

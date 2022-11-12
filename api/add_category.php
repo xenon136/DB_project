@@ -128,7 +128,7 @@ body {
       <h2>Добавление категорий</h2>
       <p>На этой странице вы можете добавить категорию</p>
       <hr>
-      <form name="cat_form" action="act/add_category_act.php" method="post">
+      <form name="cat_form" action="add_category_act.php" method="post">
       <p>Категория: <input type="text" name="name" /></p>
         <input name="input" type="submit" value="Отправить" /><br>
       </form>
