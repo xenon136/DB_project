@@ -137,6 +137,7 @@ body {
           <th>Изготовитель</th>
           <th>Категория</th>
           <th>Цена</th>
+          <th>Удалить</th>
         </tr>
         <?php 
           $host='lucky.db.elephantsql.com';
@@ -155,6 +156,7 @@ body {
             echo "<td>".$row['company.name'] . "</td>";
             echo "<td>".$row['category.name'] . "</td>";
             echo "<td>".$row['product.price'] . "</td>";
+            echo "<td><form action='delete_product_row.php' method='post'><input type='submit' name='id' value=".$row["id"].">Удалить</input></form></td>";
             echo "</tr>";  
           }
           ?>
