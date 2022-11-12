@@ -145,18 +145,18 @@ body {
           $password='tYwgRYgZoK9N3hdNkyU604UrbpEZ2OIl';
           $db_name='wulgcjle';
           $DBH = new PDO("pgsql:host=$host;dbname=$db_name;user=$user;password=$password");
-          $query = 'SELECT * FROM product, seller, color, company, caregory WHERE product.seller_id = seller.id and product.color_id = color.id and product.company_id = company.id and product.category_id = caregory.id';
+          $query = 'SELECT product.name as name seller.name as seller_name FROM product, seller, color, company, caregory WHERE product.seller_id = seller.id and product.color_id = color.id and product.company_id = company.id and product.category_id = caregory.id';
           $STH = $DBH->query($query);
           $STH->setFetchMode(PDO::FETCH_ASSOC);  
           while($row = $STH->fetch()) {  
             echo "<tr><td>".array_keys($row)."</td></tr>";
             echo "<tr>";
-            echo "<td>".$row['product[name]'] . "</td>";
-            echo "<td>".$row['seller.name'] . "</td>";
-            echo "<td>".$row['color.name'] . "</td>";
-            echo "<td>".$row['company.name'] . "</td>";
-            echo "<td>".$row['category.name'] . "</td>";
-            echo "<td>".$row['product.price'] . "</td>";
+            echo "<td>".$row['name'] . "</td>";
+            echo "<td>".$row['seller_name'] . "</td>";
+            echo "<td>".$row['color_name'] . "</td>";
+            echo "<td>".$row['company_name'] . "</td>";
+            echo "<td>".$row['category_name'] . "</td>";
+            echo "<td>".$row['price'] . "</td>";
             echo "<td><form action='delete_product_row.php' method='post'><input type='submit' name='id' value=".$row["id"].">Удалить</input></form></td>";
             echo "</tr>";  
           }
