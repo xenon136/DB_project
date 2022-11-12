@@ -115,7 +115,7 @@ body {
       <h1>Admin page</h1>
     </header>
     <aside class="left">
-    <ul>
+      <ul>
         <li><a href="index.php">Просмотр</a></li>
         <li><a href="add_product.php">Добавить товар</a></li>
         <li><a href="add_color.php">Добавить цвет</a></li>
@@ -125,13 +125,14 @@ body {
       </ul>
     </aside>
     <main class="content">
-      <h2>Добавление товар</h2>
-      <p>На этой странице вы можете добавить товар</p>
+    <h2>Добавление продавца</h2>
+      <p>На этой странице вы можете добавить продавца</p>
       <hr>
-      <form name="prod_form" action="act/add_product_act.php" method="post">
-      <p>Категория: <input type="text" name="name" /></p>
+      <form name="sell_form" action="act/add_seller_act.php" method="post">
+      <p>Продавец: <input type="text" name="name" /></p>
         <input name="input" type="submit" value="Отправить" /><br>
       </form>
+    </main>
     </main>
     <br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br>

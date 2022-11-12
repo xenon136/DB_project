@@ -115,22 +115,25 @@ body {
       <h1>Admin page</h1>
     </header>
     <aside class="left">
-      <ul>
+    <ul>
+        <li><a href="index.php">Просмотр</a></li>
         <li><a href="add_product.php">Добавить товар</a></li>
         <li><a href="add_color.php">Добавить цвет</a></li>
         <li><a href="add_company.php">Добавить компанию</a></li>
-        <li><a href="index.php">Просмотр</a></li>
+        <li><a href="add_category.php">Добавить категорию</a></li>
+        <li><a href="add_seller.php">Добавить продавца</a></li>
       </ul>
     </aside>
     <main class="content">
       <h2>Добавление категорий</h2>
       <p>На этой странице вы можете добавить категорию</p>
       <hr>
-      <form name="cat_form" action="add_category_act.php" method="post">
+      <form name="cat_form" action="act/add_category_act.php" method="post">
       <p>Категория: <input type="text" name="name" /></p>
         <input name="input" type="submit" value="Отправить" /><br>
       </form>
     </main>
+    <br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br>
     <footer class="footer">&copy; Copyright Kondratev D.S.</footer>
   </div>

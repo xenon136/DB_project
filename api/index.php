@@ -116,20 +116,27 @@ body {
     </header>
     <aside class="left">
       <ul>
+        <li><a href="index.php">Просмотр</a></li>
         <li><a href="add_product.php">Добавить товар</a></li>
         <li><a href="add_color.php">Добавить цвет</a></li>
         <li><a href="add_company.php">Добавить компанию</a></li>
         <li><a href="add_category.php">Добавить категорию</a></li>
+        <li><a href="add_seller.php">Добавить продавца</a></li>
       </ul>
     </aside>
     <main class="content">
       <h2>Таблицы значений</h2>
       <p>На этой странице можно увидеть значения из базы данных</p>
       <hr><br>
-      <h2>Страны</h2>
+      <h2>Товар</h2>
       <table>
         <tr>
           <th>Название</th>
+          <th>Продавец</th>
+          <th>Цвет</th>
+          <th>Изготовитель</th>
+          <th>Категория</th>
+          <th>Цена</th>
         </tr>
         <?php 
           $host='lucky.db.elephantsql.com';
@@ -137,11 +144,18 @@ body {
           $password='tYwgRYgZoK9N3hdNkyU604UrbpEZ2OIl';
           $db_name='wulgcjle';
           $DBH = new PDO("pgsql:host=$host;dbname=$db_name;user=$user;password=$password");
-          $query = 'SELECT * FROM country';
+          $query = 'SELECT * FROM product, seller, color, company, caregory WHERE product.seller_id = seller.id and product.color_id = color.id and product.company_id = company.id and product.category_id = caregory.id';
           $STH = $DBH->query($query);
           $STH->setFetchMode(PDO::FETCH_ASSOC);  
           while($row = $STH->fetch()) {  
-            echo "<tr><td>".$row['country_name'] . "</td></tr>";  
+            echo "<tr>";
+            echo "<td>".$row['product.name'] . "</td>";
+            echo "<td>".$row['seller.name'] . "</td>";
+            echo "<td>".$row['color.name'] . "</td>";
+            echo "<td>".$row['company.name'] . "</td>";
+            echo "<td>".$row['category.name'] . "</td>";
+            echo "<td>".$row['product.price'] . "</td>";
+            echo "</tr>";  
           }
           ?>
       </table>
@@ -162,6 +176,22 @@ body {
           ?>
       </table>
       <hr><br>
+      <h2>Компания</h2>
+      <table>
+        <tr>
+          <th>Название</th>
+        </tr>
+        <?php 
+          $DBH = new PDO("pgsql:host=$host;dbname=$db_name;user=$user;password=$password");
+          $query = 'SELECT * FROM company';
+          $STH = $DBH->query($query);
+          $STH->setFetchMode(PDO::FETCH_ASSOC);  
+          while($row = $STH->fetch()) {  
+            echo "<tr><td>".$row['name'] . "</td></tr>";  
+          }
+          ?>
+      </table>
+      <hr><br>
       <h2>Категория</h2>
       <table>
         <tr>
@@ -170,6 +200,22 @@ body {
         <?php 
           $DBH = new PDO("pgsql:host=$host;dbname=$db_name;user=$user;password=$password");
           $query = 'SELECT * FROM caregory';
+          $STH = $DBH->query($query);
+          $STH->setFetchMode(PDO::FETCH_ASSOC);  
+          while($row = $STH->fetch()) {  
+            echo "<tr><td>".$row['name'] . "</td></tr>";  
+          }
+          ?>
+      </table>
+      <hr><br>
+      <h2>Продавцы</h2>
+      <table>
+        <tr>
+          <th>Название</th>
+        </tr>
+        <?php 
+          $DBH = new PDO("pgsql:host=$host;dbname=$db_name;user=$user;password=$password");
+          $query = 'SELECT * FROM seller';
           $STH = $DBH->query($query);
           $STH->setFetchMode(PDO::FETCH_ASSOC);  
           while($row = $STH->fetch()) {  

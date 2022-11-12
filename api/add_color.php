@@ -116,21 +116,24 @@ body {
     </header>
     <aside class="left">
       <ul>
-        <li><a href="add_product.php">Добавить товар</a></li>
-        <li><a href="add_category.php">Добавить категорию</a></li>
-        <li><a href="add_company.php">Добавить компанию</a></li>
         <li><a href="index.php">Просмотр</a></li>
+        <li><a href="add_product.php">Добавить товар</a></li>
+        <li><a href="add_color.php">Добавить цвет</a></li>
+        <li><a href="add_company.php">Добавить компанию</a></li>
+        <li><a href="add_category.php">Добавить категорию</a></li>
+        <li><a href="add_seller.php">Добавить продавца</a></li>
       </ul>
     </aside>
     <main class="content">
       <h2>Добавление категорий</h2>
       <p>На этой странице вы можете добавить цвет</p>
       <hr>
-      <form name="col_form" action="add_color_act.php" method="post">
+      <form name="col_form" action="act/add_color_act.php" method="post">
       <p>Цвет: <input type="text" name="name" /></p>
         <input name="input" type="submit" value="Отправить" /><br>
       </form>
     </main>
+    <br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br>
     <footer class="footer">&copy; Copyright Kondratev D.S.</footer>
   </div>
