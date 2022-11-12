@@ -149,7 +149,7 @@ body {
           $STH = $DBH->query($query);
           $STH->setFetchMode(PDO::FETCH_ASSOC);  
           while($row = $STH->fetch()) {  
-            echo "<tr><td>".$row."</td></tr>";
+            echo "<tr><td>".array_keys($row)."</td></tr>";
             echo "<tr>";
             echo "<td>".$row['product[name]'] . "</td>";
             echo "<td>".$row['seller.name'] . "</td>";
